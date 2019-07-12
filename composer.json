@@ -1,0 +1,32 @@
+{
+  "name": "svilborg/laravel-db-faker-mask",
+  "description": "Laravel DB Masking",
+  "keywords": [
+    "framework",
+    "laravel",
+    "db",
+    "faker",
+    "humanize"
+  ],
+  "license": "MIT",
+  "type": "project",
+  "require": {
+    "laravel/framework": "5.*"
+  },
+  "require-dev": {
+        "phpunit/phpunit": "^7.0",
+        "barryvdh/laravel-ide-helper": "^2.5",
+        "mockery/mockery": "0.9.*",
+        "fzaninotto/faker": "~1.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "DbFakerMask\\": "src"
+    }
+  },
+  "autoload-dev": {
+     "psr-4": {
+         "Tests\\": "tests/"
+     }
+  }
+}
