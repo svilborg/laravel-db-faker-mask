@@ -1,5 +1,4 @@
 .env
-.env.testing
 artisan
 /bootstrap
 /storage/*.key

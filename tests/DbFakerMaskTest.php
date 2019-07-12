@@ -16,26 +16,17 @@ class DbFakerMaskTest extends TestCase
          * @var \Illuminate\Foundation\Application $app
          */
         $app = require __DIR__ . '/bootstrap/app.php';
-//         $app->loadEnvironmentFrom('.env.testing');
+        $app->loadEnvironmentFrom('.env.testing');
         $app->make(\Tests\Kernel::class)->bootstrap();
 
         $faker = \Faker\Factory::create();
 
         $options = [
-            'chunk' => 820,
+            'chunk' => 20,
             'tables' => [
                 'users' => [
                     'firstname' => 'firstName',
-                    'lastname' => 'lastName',
-                    'email' => function (\Faker\Generator $faker) {
-                        return $faker->unique()->username . date('YmdHis') . '@test.com';
-                    }
-                ],
-                'shops' => [
-                    'name' => 'company',
-                    'url' => function (\Faker\Generator $faker) {
-                        return $faker->url;
-                    }
+                    'lastname' => 'lastName'
                 ]
             ]
         ];
@@ -48,7 +39,7 @@ class DbFakerMaskTest extends TestCase
         $this->assertTrue($this->dbFakerMask instanceof DbFakerMask);
     }
 
-    // public function testHumanize()
+    // public function testMasking()
     // {
     // $this->dbFakerMask->mask();
 

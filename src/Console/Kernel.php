@@ -4,7 +4,7 @@ namespace DbFakerMask\Console;
 // Illuminate
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use DbFakerMask\Commands\DbHumanizeCommand;
+use DbFakerMask\Commands\DbFakerMaskCommand;
 
 class Kernel extends ConsoleKernel
 {
@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        DbHumanizeCommand::class
+        DbFakerMaskCommand::class
     ];
 
     /**
@@ -26,14 +26,4 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {}
-
-//     /**
-//      * Register the Closure based commands for the application.
-//      *
-//      * @return void
-//      */
-//     protected function commands()
-//     {
-//         require base_path('routes/console.php');
-//     }
 }
