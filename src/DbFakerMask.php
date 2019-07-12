@@ -43,7 +43,6 @@ class DbFakerMask
                     $fields = [];
 
                     $record = (array) $record;
-
                     foreach ($tableFields as $field => $fieldConfig) {
 
                         if (is_callable($fieldConfig)) {
@@ -54,9 +53,8 @@ class DbFakerMask
 
                         $fields[$field] = $value;
                     }
+                    $this->update($table, $record, $fields);
                 }
-
-                $this->update($table, $record, $fields);
             });
         }
     }
