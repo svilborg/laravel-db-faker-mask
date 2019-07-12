@@ -7,8 +7,17 @@ use DbFakerMask\DbFakerMask;
 class DbFakerMaskTest extends TestCase
 {
 
+    /**
+     *
+     * @var DbFakerMask
+     */
     protected $dbFakerMask;
 
+    /**
+     *
+     * {@inheritdoc}
+     * @see \PHPUnit\Framework\TestCase::setUp()
+     */
     protected function setUp()
     {
         /**
@@ -16,7 +25,6 @@ class DbFakerMaskTest extends TestCase
          * @var \Illuminate\Foundation\Application $app
          */
         $app = require __DIR__ . '/bootstrap/app.php';
-        $app->loadEnvironmentFrom('.env.testing');
         $app->make(\Tests\Kernel::class)->bootstrap();
 
         $faker = \Faker\Factory::create();
@@ -25,8 +33,8 @@ class DbFakerMaskTest extends TestCase
             'chunk' => 20,
             'tables' => [
                 'users' => [
-                    'firstname' => 'firstName',
-                    'lastname' => 'lastName'
+                    'first_name' => 'firstName',
+                    'last_name' => 'lastName'
                 ]
             ]
         ];
@@ -39,10 +47,10 @@ class DbFakerMaskTest extends TestCase
         $this->assertTrue($this->dbFakerMask instanceof DbFakerMask);
     }
 
-    // public function testMasking()
-    // {
-    // $this->dbFakerMask->mask();
+    public function testMasking()
+    {
+        $this->dbFakerMask->mask();
 
-    // $this->assertTrue($this->dbFakerMask instanceof DbFakerMask);
-    // }
+        $this->assertTrue($this->dbFakerMask instanceof DbFakerMask);
+    }
 }
