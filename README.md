@@ -7,6 +7,7 @@ Available in config/db_mask.php
 
 Sample configuration file
 
+```php
     return [
         /*
          * |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ Sample configuration file
             ]
         ]
     ];
+```
 
 ### Usage
 
