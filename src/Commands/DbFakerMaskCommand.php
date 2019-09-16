@@ -34,13 +34,6 @@ class DbFakerMaskCommand extends Command
     protected $config;
 
     /**
-     * Configuration repository.
-     *
-     * @var Config
-     */
-    protected $config;
-
-    /**
      *
      * @var DbFakerMask
      */

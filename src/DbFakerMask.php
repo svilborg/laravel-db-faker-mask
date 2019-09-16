@@ -23,6 +23,7 @@ class DbFakerMask
     /**
      *
      * @param array $options
+     * @param Faker $faker
      */
     public function __construct(array $options, Faker $faker)
     {
@@ -30,6 +31,9 @@ class DbFakerMask
         $this->faker = $faker;
     }
 
+    /**
+     * Mask database tables
+     */
     public function mask()
     {
         $tables = $this->options['tables'];
@@ -53,6 +57,7 @@ class DbFakerMask
 
                         $fields[$field] = $value;
                     }
+
                     $this->update($table, $record, $fields);
                 }
             });
